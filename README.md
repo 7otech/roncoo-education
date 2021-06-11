@@ -80,3 +80,12 @@ roncoo-education
 
 ## 项目推荐
 ##### 龙果支付系统(roncoo-pay)：[码云地址](https://gitee.com/roncoocom/roncoo-pay) | [Github地址](https://github.com/roncoo/roncoo-pay)
+
+
+注册中心（roncoo-education-server-eureka）
+配置中心（roncoo-education-server-config）
+课程模块（roncoo-education-course）
+用户模块（roncoo-education-user）
+系统模块（roncoo-education-system）
+定时器（roncoo-education-job)
+网关工程（roncoo-education-gateway)
