@@ -2,7 +2,7 @@ version: "3.0"
 services:
   app-sba:
     build:
-      context: ./roncoo-education-app-sba
+      context: ../roncoo-education-app-sba
       args:
         JAVA_OPTS: '-Xmn128M -Xmx512M'
         RUN_ARGS: '--spring.profiles.active=demo --spring.cloud.nacos.server-addr=10.2.100.2:8848'
@@ -17,7 +17,7 @@ services:
       - "5721:5721"
   app-job:
     build:
-      context: ./roncoo-education-app-job
+      context: ../roncoo-education-app-job
       args:
         JAVA_OPTS: '-Xmn128M -Xmx512M'
         RUN_ARGS: '--spring.profiles.active=demo --spring.cloud.nacos.server-addr=10.2.100.2:8848'
@@ -32,7 +32,7 @@ services:
       - "5820:5820"
   app-gateway:
     build:
-      context: ./roncoo-education-app-gateway
+      context: ../roncoo-education-app-gateway
       args:
         JAVA_OPTS: '-Xmn128M -Xmx512M'
         RUN_ARGS: '--spring.profiles.active=demo --spring.cloud.nacos.server-addr=10.2.100.2:8848'
@@ -47,7 +47,7 @@ services:
       - "5840:5840"
   system-service:
     build:
-      context: ./roncoo-education-system/roncoo-education-system-service
+      context: ../roncoo-education-system/roncoo-education-system-service
       args:
         JAVA_OPTS: '-Xmn128M -Xmx512M'
         RUN_ARGS: '--spring.profiles.active=demo --spring.cloud.nacos.server-addr=10.2.100.2:8848'
@@ -62,7 +62,7 @@ services:
       - "5730:5730"
   user-service:
     build:
-      context: ./roncoo-education-user/roncoo-education-user-service
+      context: ../roncoo-education-user/roncoo-education-user-service
       args:
         JAVA_OPTS: '-Xmn128M -Xmx512M'
         RUN_ARGS: '--spring.profiles.active=demo --spring.cloud.nacos.server-addr=10.2.100.2:8848'
@@ -77,7 +77,7 @@ services:
       - "5720:5720"
   course-service:
     build:
-      context: ./roncoo-education-course/roncoo-education-course-service
+      context: ../roncoo-education-course/roncoo-education-course-service
       args:
         JAVA_OPTS: '-Xmn128M -Xmx512M'
         RUN_ARGS: '--spring.profiles.active=demo --spring.cloud.nacos.server-addr=10.2.100.2:8848'
