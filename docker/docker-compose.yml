@@ -51,6 +51,7 @@ services:
     #容器的映射端口
     ports:
       - 6379:6379 #注意第二个端口必须是redis.conf中的端口号
+    command: redis-server /etc/redis.conf
     #定义挂载点
     volumes:
       - ./data:/data #挂载/docker-compose/redis/data至容器
