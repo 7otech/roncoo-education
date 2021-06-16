@@ -15,7 +15,9 @@ http://10.2.100.2:8848/nacos
 nacos
 nacos
 
+docker nacos
 docker compose redis
+docker elasticsearch
 
 https://www.cnblogs.com/niceyoo/p/13511082.html
 https://cloud.tencent.com/developer/article/1667403
