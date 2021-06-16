@@ -43,6 +43,8 @@ use education_course;
 redis-cli
 auth roncoo
 
+https://edu-api.7otech.com/
+
 https://www.cnblogs.com/niceyoo/p/13511082.html
 https://cloud.tencent.com/developer/article/1667403
 
