@@ -2,6 +2,7 @@ https://nacos.io/zh-cn/docs/quick-start-docker.html
 
 
 docker-compose -f nacos-standalone-mysql-5.7.yaml up
+docker-compose -f nacos-standalone-mysql-5.7.yaml down
 
 https://www.cnblogs.com/niceyoo/p/13511082.html
 https://cloud.tencent.com/developer/article/1667403
