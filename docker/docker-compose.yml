@@ -30,6 +30,7 @@ services:
     environment:
       - "ES_JAVA_OPTS=-Xms256M -Xmx512M"
       discovery.type: single-node
+      - cluster.name=elasticsearch
   #kibana图形化插件
   kibana:
     image: daocloud.io/library/kibana:7.7.0
