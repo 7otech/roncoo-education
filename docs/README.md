@@ -40,6 +40,9 @@ grant all privileges on education_user.* to 'roncoo'@'%';
 flush privileges;
 use education_course;
 
+redis-cli
+auth roncoo
+
 https://www.cnblogs.com/niceyoo/p/13511082.html
 https://cloud.tencent.com/developer/article/1667403
 
