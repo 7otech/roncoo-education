@@ -33,6 +33,11 @@ docker cp /home/fastdfs/client.conf tracker:/etc/fdfs/client.conf
 mkdir -p /home/fastdfs/nginx/
 docker cp storage:/etc/nginx/conf/nginx.conf /home/fastdfs/nginx/
 
+location / {
+    root /fastdfs/store_path/data;
+    ngx_fastdfs_module;
+}
+
 docker run -id --name fastdfs_nginx \
 --restart=always \
 -v /home/fastdfs/storage/data:/fastdfs/store_path \
