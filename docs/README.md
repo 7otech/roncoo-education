@@ -1,6 +1,8 @@
 https://nacos.io/zh-cn/docs/quick-start-docker.html
 
 
+ocker network create nacos
+
 docker-compose -f nacos-standalone-mysql-5.7.yaml up
 docker-compose -f nacos-standalone-mysql-5.7.yaml down
 
