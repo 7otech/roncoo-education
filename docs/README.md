@@ -1,6 +1,9 @@
 https://nacos.io/zh-cn/docs/quick-start-docker.html
 
 
+https://www.cnblogs.com/niceyoo/p/13511082.html
+https://cloud.tencent.com/developer/article/1667403
+
 docker search fastdfs
 NAME                           DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
 season/fastdfs                 FastDFS                                         78                                      
