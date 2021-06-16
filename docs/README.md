@@ -30,7 +30,18 @@ season/fastdfs:1.2 storage
 docker cp tracker:/etc/fdfs/client.conf /home/fastdfs/
 docker cp /home/fastdfs/client.conf tracker:/etc/fdfs/client.conf
 
+mkdir -p /home/fastdfs/nginx/
+docker cp storage:/etc/nginx/conf/nginx.conf /home/fastdfs/nginx/
 
+docker run -id --name fastdfs_nginx \
+--restart=always \
+-v /home/fastdfs/storage/data:/fastdfs/store_path \
+-v /home/fastdfs/nginx/nginx.conf:/etc/nginx/conf/nginx.conf \
+-p 8888:80 \
+-e TRACKER_SERVER=10.2.100.2:22122 \
+season/fastdfs:1.2 nginx
+
+curl -i http://127.0.0.1:8888/group1/M00/00/00/CgJkAmDJkXeAf-kzAAAACBfWGpM977.txt
 
 docker search fastdfs
 NAME                           DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
