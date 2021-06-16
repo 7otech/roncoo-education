@@ -22,6 +22,7 @@ docker compose elasticsearch
 
 docker network create roncoo
 docker-compose up roncoo-redis
+docker-compose up -d
 
 https://www.cnblogs.com/niceyoo/p/13511082.html
 https://cloud.tencent.com/developer/article/1667403
