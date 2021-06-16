@@ -4,6 +4,10 @@ https://nacos.io/zh-cn/docs/quick-start-docker.html
 https://www.cnblogs.com/niceyoo/p/13511082.html
 https://cloud.tencent.com/developer/article/1667403
 
+mkdir -p /home/fastdfs/tracker/data
+mkdir -p /home/fastdfs/storage/data
+mkdir -p /home/fastdfs/storage/path
+
 docker run -id --name tracker \
 -p 22122:22122 \
 --restart=always --net host \
@@ -14,6 +18,19 @@ season/fastdfs:1.2 tracker
 -p：指定容器内部使用的网络端口映射到我们使用的主机上
 --name：指定容器创建的名称
 -v：容器跟宿主机之间的挂载目录
+
+docker exec -it tracker bash
+
+docker run -id --name storage \
+--restart=always --net host \
+-v /home/fastdfs/storage/data:/fastdfs/store_path \
+-e TRACKER_SERVER="10.2.100.2:22122" \
+season/fastdfs:1.2 storage
+
+docker cp tracker:/etc/fdfs/client.conf /home/fastdfs/
+docker cp /home/fastdfs/client.conf tracker:/etc/fdfs/client.conf
+
+
 
 docker search fastdfs
 NAME                           DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
