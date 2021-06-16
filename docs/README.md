@@ -1,9 +1,14 @@
 https://nacos.io/zh-cn/docs/quick-start-docker.html
 
 
-ocker network create nacos
+docker-compose -f example/standalone-derby.yaml up
+docker-compose -f example/standalone-mysql-5.7.yaml up
+docker-compose -f example/standalone-mysql-8.yaml up
+docker-compose -f example/cluster-hostname.yaml up
 
-docker-compose -f nacos-standalone-mysql-5.7.yaml up
+docker network create nacos
+
+docker-compose -f nacos-standalone-mysql-5.7.yaml up -d
 docker-compose -f nacos-standalone-mysql-5.7.yaml down
 
 https://www.cnblogs.com/niceyoo/p/13511082.html
