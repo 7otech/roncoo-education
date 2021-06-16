@@ -1,6 +1,8 @@
 https://nacos.io/zh-cn/docs/quick-start-docker.html
 
 
+docker-compose -f nacos-standalone-mysql-5.7 up
+
 https://www.cnblogs.com/niceyoo/p/13511082.html
 https://cloud.tencent.com/developer/article/1667403
 
