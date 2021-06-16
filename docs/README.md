@@ -24,6 +24,7 @@ docker network create roncoo
 docker-compose up roncoo-redis
 docker-compose up -d
 docker-compose up -d roncoo-mysql57
+docker-compose up -d roncoo-redis
 docker-compose down
 
 ERROR 2026 (HY000): SSL connection error: error:1425F102:SSL routines:ssl_choose_client_version:unsupported protocol
