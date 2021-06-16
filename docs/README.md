@@ -12,6 +12,8 @@ docker-compose -f nacos-standalone-mysql-5.7.yaml up -d
 docker-compose -f nacos-standalone-mysql-5.7.yaml down
 
 http://10.2.100.2:8848/nacos
+nacos
+nacos
 
 https://www.cnblogs.com/niceyoo/p/13511082.html
 https://cloud.tencent.com/developer/article/1667403
