@@ -13,9 +13,35 @@ services:
       - ./db/conf.d:/etc/mysql/conf.d
       - ./db/data:/var/lib/mysql
       - ./db/init-sql:/docker-entrypoint-initdb.d
+    networks:
+      - roncoo
     environment:
       MYSQL_ROOT_PASSWORD: root
     restart: always
+  elasticsearch: #服务的名称
+    image: daocloud.io/library/elasticsearch:7.7.0         #指定镜像的路径
+    restart: always                                        #启动docker，自动运行当前容器
+    container_name: elasticsearch                          #容器名称
+    ports: #指定多个端口
+      - 9200:9200                                          #映射的端口号
+      - 9300:9300
+    networks:
+      - roncoo
+    environment:
+      - "ES_JAVA_OPTS=-Xms256M -Xmx512M"
+      discovery.type: single-node
+  #kibana图形化插件
+  kibana:
+    image: daocloud.io/library/kibana:7.7.0
+    environment:
+      SERVER_NAME: kibana
+      ELASTICSEARCH_URL: http://10.2.100.2:9200
+    ports:
+      - "5601:5601"
+    networks:
+      - roncoo
+    depends_on:
+      - elasticsearch
   roncoo-redis:
     #定义主机名
     container_name: roncoo-redis
@@ -28,6 +54,8 @@ services:
     volumes:
       - ./data:/data #挂载/docker-compose/redis/data至容器
       - ./conf/redis.conf:/etc/redis.conf #挂载conf至容器
+    networks:
+      - roncoo
     privileged: true   #环境变量
     environment:
       - TZ=Asia/Shanghai
@@ -46,9 +74,13 @@ services:
     volumes:
       - ./roncoo/logs/sba:/root/education/logs/sba
     networks:
-      - education
+      - roncoo
     ports:
       - "5721:5721"
+    depends_on:
+      - elasticsearch
+      - roncoo-mysql57
+      - roncoo-redis
   app-job:
     build:
       context: ../roncoo-education-app-job
@@ -61,9 +93,13 @@ services:
     volumes:
       - ./roncoo/logs/job:/root/education/logs/job
     networks:
-      - education
+      - roncoo
     ports:
       - "5820:5820"
+    depends_on:
+      - elasticsearch
+      - roncoo-mysql57
+      - roncoo-redis
   app-gateway:
     build:
       context: ../roncoo-education-app-gateway
@@ -76,9 +112,13 @@ services:
     volumes:
       - ./roncoo/logs/gateway:/root/education/logs/gateway
     networks:
-      - education
+      - roncoo
     ports:
       - "5840:5840"
+    depends_on:
+      - elasticsearch
+      - roncoo-mysql57
+      - roncoo-redis
   system-service:
     build:
       context: ../roncoo-education-system/roncoo-education-system-service
@@ -91,9 +131,13 @@ services:
     volumes:
       - ./roncoo/logs/system:/root/education/logs/system
     networks:
-      - education
+      - roncoo
     ports:
       - "5730:5730"
+    depends_on:
+      - elasticsearch
+      - roncoo-mysql57
+      - roncoo-redis
   user-service:
     build:
       context: ../roncoo-education-user/roncoo-education-user-service
@@ -106,9 +150,13 @@ services:
     volumes:
       - ./roncoo/logs/user:/root/education/logs/user
     networks:
-      - education
+      - roncoo
     ports:
       - "5720:5720"
+    depends_on:
+      - elasticsearch
+      - roncoo-mysql57
+      - roncoo-redis
   course-service:
     build:
       context: ../roncoo-education-course/roncoo-education-course-service
@@ -121,9 +169,13 @@ services:
     volumes:
       - ./roncoo/logs/course:/root/education/logs/course
     networks:
-      - education
+      - roncoo
     ports:
       - "5710:5710"
+    depends_on:
+      - elasticsearch
+      - roncoo-mysql57
+      - roncoo-redis
 networks:
-  education:
+  roncoo:
     external: true
