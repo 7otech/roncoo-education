@@ -76,6 +76,11 @@ https://edu-api.7otech.com/
 保利威视
 https://www.polyv.net/
 
+useid
+secretkey
+readtoken
+writetoken
+
 七牛
 
 阿里云
