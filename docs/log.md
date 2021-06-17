@@ -31,3 +31,50 @@ roncoo-course     |     at com.roncoo.education.course.service.api.biz.ApiUpload
 roncoo-course     |     at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 roncoo-course     |     at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 roncoo-course     |     at java.lang.Thread.run(Thread.java:745)
+
+
+roncoo-course     | 2021-06-17 17:59:47.402 |-WARN  [pool-3-thread-11] com.aliyun.oss [62] -|   [Server]Unable to execute HTTP request: You have no right to access this object because of bucket acl.
+roncoo-course     | [ErrorCode]: AccessDenied
+roncoo-course     | [RequestId]: 60CB8D925423BA3733A96089
+roncoo-course     | [HostId]: roncoo-web.oss-cn-beijing.aliyuncs.com
+roncoo-course     | [ResponseError]:
+roncoo-course     | <?xml version="1.0" encoding="UTF-8"?>
+roncoo-course     | <Error>
+roncoo-course     |   <Code>AccessDenied</Code>
+roncoo-course     |   <Message>You have no right to access this object because of bucket acl.</Message>
+roncoo-course     |   <RequestId>60CB8D925423BA3733A96089</RequestId>
+roncoo-course     |   <HostId>roncoo-web.oss-cn-beijing.aliyuncs.com</HostId>
+roncoo-course     | </Error>
+roncoo-course     |
+roncoo-course     | 2021-06-17 17:59:47.402 |-ERROR [pool-3-thread-11] com.roncoo.education.util.aliyun.AliyunUtil [124] -|   上传失败
+roncoo-course     | com.aliyun.oss.OSSException: You have no right to access this object because of bucket acl.
+roncoo-course     | [ErrorCode]: AccessDenied
+roncoo-course     | [RequestId]: 60CB8D925423BA3733A96089
+roncoo-course     | [HostId]: roncoo-web.oss-cn-beijing.aliyuncs.com
+roncoo-course     | [ResponseError]:
+roncoo-course     | <?xml version="1.0" encoding="UTF-8"?>
+roncoo-course     | <Error>
+roncoo-course     |   <Code>AccessDenied</Code>
+roncoo-course     |   <Message>You have no right to access this object because of bucket acl.</Message>
+roncoo-course     |   <RequestId>60CB8D925423BA3733A96089</RequestId>
+roncoo-course     |   <HostId>roncoo-web.oss-cn-beijing.aliyuncs.com</HostId>
+roncoo-course     | </Error>
+roncoo-course     |
+roncoo-course     |     at com.aliyun.oss.common.utils.ExceptionFactory.createOSSException(ExceptionFactory.java:99)
+roncoo-course     |     at com.aliyun.oss.internal.OSSErrorResponseHandler.handle(OSSErrorResponseHandler.java:72)
+roncoo-course     |     at com.aliyun.oss.common.comm.ServiceClient.handleResponse(ServiceClient.java:242)
+roncoo-course     |     at com.aliyun.oss.common.comm.ServiceClient.sendRequestImpl(ServiceClient.java:124)
+roncoo-course     |     at com.aliyun.oss.common.comm.ServiceClient.sendRequest(ServiceClient.java:67)
+roncoo-course     |     at com.aliyun.oss.internal.OSSOperation.send(OSSOperation.java:92)
+roncoo-course     |     at com.aliyun.oss.internal.OSSOperation.doOperation(OSSOperation.java:140)
+roncoo-course     |     at com.aliyun.oss.internal.OSSOperation.doOperation(OSSOperation.java:111)
+roncoo-course     |     at com.aliyun.oss.internal.OSSObjectOperation.writeObjectInternal(OSSObjectOperation.java:665)
+roncoo-course     |     at com.aliyun.oss.internal.OSSObjectOperation.putObject(OSSObjectOperation.java:132)
+roncoo-course     |     at com.aliyun.oss.OSSClient.putObject(OSSClient.java:528)
+roncoo-course     |     at com.aliyun.oss.OSSClient.putObject(OSSClient.java:510)
+roncoo-course     |     at com.roncoo.education.util.aliyun.AliyunUtil.putObjectForFile(AliyunUtil.java:243)
+roncoo-course     |     at com.roncoo.education.util.aliyun.AliyunUtil.uploadVideo(AliyunUtil.java:121)
+roncoo-course     |     at com.roncoo.education.course.service.api.biz.ApiUploadBiz$1.run(ApiUploadBiz.java:144)
+roncoo-course     |     at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+roncoo-course     |     at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+roncoo-course     |     at java.lang.Thread.run(Thread.java:745)
