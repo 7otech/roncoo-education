@@ -88,3 +88,13 @@ roncoo-course     |     at java.lang.Thread.run(Thread.java:745)
 roncoo-job        | 2021-06-17 18:06:10.961 |-WARN  [scheduling-1] com.roncoo.education.app.job.OrderCrontab [36] -|   订单处理-定时任务开始
 roncoo-course     | 2021-06-17 18:06:10.962 |-DEBUG [http-nio-5730-exec-8] com.roncoo.education.course.service.dao.impl.mapper.OrderInfoMapper.countByExample [159] -|   ==>  Preparing: select count(*) from order_info WHERE ( order_status = ? and gmt_create < ? )
 roncoo-course     | 2021-06-17 18:06:10.963 |-DEBUG [http-nio-5730-exec-8] com.roncoo.education.course.service.dao.impl.mapper.OrderInfoMapper.countByExample [159] -|   ==> Parameters: 1(Integer), 2021-06-17 17:06:10.962(Timestamp)
+
+
+roncoo-course     | 2021-06-17 18:30:55.087 |-DEBUG [pool-3-thread-1] com.roncoo.education.course.service.dao.impl.mapper.CourseVideoMapper.selectByExample [159] -|   <==      Total: 1
+roncoo-course     | 2021-06-17 18:30:55.090 |-DEBUG [pool-3-thread-1] com.roncoo.education.course.service.api.biz.ApiUploadBiz [155] -|   video:{"id":1405593808665600002,"gmtCreate":1623954653000,"gmtModified":1623954653000,"statusId":1,"sort":1,"courseId":1085453180200448002,"chapterId":1249546933273939969,"videoName":"【把手当成手写板的智能手表⌚️：用触摸笔在手背上画画，在手表上实时显示。笔尖带有永磁体，手表内置磁力计会追踪笔尖相对位置，用比指尖电容屏输入精度更高】.mp4","videoNo":1405593808636239873,"videoStatus":2,"videoLength":"00:00:28","videoVid":"97a8ee5828c387bf1beca6a370b96f24_9","videoOasId":"roncoo-web.oss-cn-beijing.aliyuncs.comcourse/7f43c1b305214f90b678c18d14cd50b5.mp4"}
+roncoo-course     | 2021-06-17 18:30:55.091 |-DEBUG [pool-3-thread-1] com.roncoo.education.course.service.api.biz.ApiUploadBiz [156] -|   courseVideo:null
+roncoo-course     | Exception in thread "pool-3-thread-1" java.lang.NullPointerException
+roncoo-course     |     at com.roncoo.education.course.service.api.biz.ApiUploadBiz$1.run(ApiUploadBiz.java:157)
+roncoo-course     |     at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+roncoo-course     |     at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+roncoo-course     |     at java.lang.Thread.run(Thread.java:745)
