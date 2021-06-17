@@ -56,7 +56,9 @@ public class CourseVideoDaoImpl implements CourseVideoDao {
 		CourseVideoExample example = new CourseVideoExample();
 		Criteria c = example.createCriteria();
 		c.andVideoNoEqualTo(videoNo);
-		c.andPeriodIdEqualTo(periodId);
+		if(periodId != null) {
+			c.andPeriodIdEqualTo(periodId);
+		}
 		List<CourseVideo> list = this.courseVideoMapper.selectByExample(example);
 		if (list.isEmpty() || list.size() < 1) {
 			return null;
