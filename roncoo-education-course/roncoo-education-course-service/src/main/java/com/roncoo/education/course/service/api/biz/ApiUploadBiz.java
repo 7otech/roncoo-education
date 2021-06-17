@@ -7,6 +7,7 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 
+import com.roncoo.education.util.tools.JSONUtil;
 import com.roncoo.spring.boot.autoconfigure.fastdfs.FastdfsClientService;
 import com.xiaoleilu.hutool.util.CollectionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -151,6 +152,8 @@ public class ApiUploadBiz extends BaseBiz {
                     // 根据视频编号更新视频信息
                     List<CourseVideo> list = courseVideoDao.listByVideoNo(videoNo);
                     for (CourseVideo video : list) {
+                        logger.debug("video:" + JSONUtil.toJSONString(video));
+                        logger.debug("courseVideo:" + JSONUtil.toJSONString(courseVideo));
                         video.setVideoLength(courseVideo.getVideoLength());
                         video.setVideoVid(courseVideo.getVideoVid());
                         video.setVideoStatus(VideoStatusEnum.SUCCES.getCode());
