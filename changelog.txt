@@ -7,4 +7,9 @@
 3. add docker
 
 2021-06-16
+1. add nacos config
+2. add fastdfs
+3. add docker
+
+2021-06-17
 1. add vedio
