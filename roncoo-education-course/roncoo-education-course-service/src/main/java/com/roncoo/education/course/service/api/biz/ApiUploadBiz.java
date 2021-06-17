@@ -147,6 +147,7 @@ public class ApiUploadBiz extends BaseBiz {
                     courseVideoDao.updateById(courseVideo);
 
                     // 根据视频编号、课时ID查询课程视频信息
+                    // CourseVideo courseVideo = courseVideoDao.getByVideoNoAndPeriodId(videoNo, Long.valueOf(0));
                     CourseVideo courseVideo = courseVideoDao.getByVideoNoAndPeriodId(videoNo, Long.valueOf(0));
 
                     // 根据视频编号更新视频信息
