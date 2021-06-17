@@ -79,6 +79,7 @@ roncoo-course     |     at java.util.concurrent.ThreadPoolExecutor.runWorker(Thr
 roncoo-course     |     at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 roncoo-course     |     at java.lang.Thread.run(Thread.java:745)
 
+
 roncoo-course     | Exception in thread "pool-3-thread-13" java.lang.NullPointerException
 roncoo-course     |     at com.roncoo.education.course.service.api.biz.ApiUploadBiz$1.run(ApiUploadBiz.java:154)
 roncoo-course     |     at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
