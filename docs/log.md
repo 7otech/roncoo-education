@@ -16,3 +16,18 @@ roncoo-course     |     at com.roncoo.education.course.service.api.biz.ApiUpload
 roncoo-course     |     at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 roncoo-course     |     at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 roncoo-course     |     at java.lang.Thread.run(Thread.java:745)
+
+
+roncoo-course     | 2021-06-17 17:56:34.795 |-ERROR [pool-3-thread-9] com.roncoo.education.util.aliyun.AliyunUtil [124] -|   上传失败
+roncoo-course     | java.lang.IllegalArgumentException: The bucket name "" is invalid. A bucket name must: 1) be comprised of lower-case characters, numbers or dash(-); 2) start with lower case or numbers; 3) be between 3-63 characters long.
+roncoo-course     |     at com.aliyun.oss.internal.OSSUtils.ensureBucketNameValid(OSSUtils.java:73)
+roncoo-course     |     at com.aliyun.oss.internal.OSSObjectOperation.writeObjectInternal(OSSObjectOperation.java:600)
+roncoo-course     |     at com.aliyun.oss.internal.OSSObjectOperation.putObject(OSSObjectOperation.java:132)
+roncoo-course     |     at com.aliyun.oss.OSSClient.putObject(OSSClient.java:528)
+roncoo-course     |     at com.aliyun.oss.OSSClient.putObject(OSSClient.java:510)
+roncoo-course     |     at com.roncoo.education.util.aliyun.AliyunUtil.putObjectForFile(AliyunUtil.java:243)
+roncoo-course     |     at com.roncoo.education.util.aliyun.AliyunUtil.uploadVideo(AliyunUtil.java:121)
+roncoo-course     |     at com.roncoo.education.course.service.api.biz.ApiUploadBiz$1.run(ApiUploadBiz.java:144)
+roncoo-course     |     at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+roncoo-course     |     at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+roncoo-course     |     at java.lang.Thread.run(Thread.java:745)
