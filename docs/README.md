@@ -72,6 +72,10 @@ https://edu-api.7otech.com/
 
 超 级 管 理 员 ：18800000000 密码：asdanEn.132reFwf（1.0.0版本）
 
+ossUrl
+ossBucket
+Bucket
+
 https://www.cnblogs.com/niceyoo/p/13511082.html
 https://cloud.tencent.com/developer/article/1667403
 
