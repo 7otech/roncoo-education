@@ -78,3 +78,12 @@ roncoo-course     |     at com.roncoo.education.course.service.api.biz.ApiUpload
 roncoo-course     |     at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 roncoo-course     |     at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 roncoo-course     |     at java.lang.Thread.run(Thread.java:745)
+
+roncoo-course     | Exception in thread "pool-3-thread-13" java.lang.NullPointerException
+roncoo-course     |     at com.roncoo.education.course.service.api.biz.ApiUploadBiz$1.run(ApiUploadBiz.java:154)
+roncoo-course     |     at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+roncoo-course     |     at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+roncoo-course     |     at java.lang.Thread.run(Thread.java:745)
+roncoo-job        | 2021-06-17 18:06:10.961 |-WARN  [scheduling-1] com.roncoo.education.app.job.OrderCrontab [36] -|   订单处理-定时任务开始
+roncoo-course     | 2021-06-17 18:06:10.962 |-DEBUG [http-nio-5730-exec-8] com.roncoo.education.course.service.dao.impl.mapper.OrderInfoMapper.countByExample [159] -|   ==>  Preparing: select count(*) from order_info WHERE ( order_status = ? and gmt_create < ? )
+roncoo-course     | 2021-06-17 18:06:10.963 |-DEBUG [http-nio-5730-exec-8] com.roncoo.education.course.service.dao.impl.mapper.OrderInfoMapper.countByExample [159] -|   ==> Parameters: 1(Integer), 2021-06-17 17:06:10.962(Timestamp)
