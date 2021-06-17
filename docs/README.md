@@ -76,6 +76,10 @@ https://edu-api.7otech.com/
 保利威视
 https://www.polyv.net/
 
+七牛
+
+阿里云
+
 ossUrl
 ossBucket
 Bucket
