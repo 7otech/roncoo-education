@@ -48,6 +48,21 @@ https://edu-api.7otech.com/
 13800000000
 123456
 
+
+前端账号密码
+普 通 用 户: 13800138002 密码：123456
+
+讲 师 用 户: 13800138001 密码：123qwe
+
+
+
+管理后台账号密码
+管 理 员 ：13800000000 密码：123456
+
+超 级 管 理 员 ：18800000000 密码：123456（2.0.0-SNAPSHOT版本）
+
+超 级 管 理 员 ：18800000000 密码：asdanEn.132reFwf（1.0.0版本）
+
 https://www.cnblogs.com/niceyoo/p/13511082.html
 https://cloud.tencent.com/developer/article/1667403
 
